@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNFOREE - Noticias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: linear-gradient(to right, white 100%);
+            flex-wrap: wrap;
+            color: white;
+        }
+
+        header img {
+            height: 150px;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            margin: 0;
+            text-align: center;
+        }
+
+        header h1 span:first-child {
+            color: red;
+            font-weight: bold;
+        }
+
+        header h1 span:last-child {
+            color: blue;
+            font-weight: bold;
+        }
+
+        nav {
+            background: linear-gradient(to right, #007BFF 100%);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4CAF50;
+            min-width: 160px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+        }
+
+        nav ul li:hover>a {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .donar-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            position: relative;
+            right: 20px;
+            top: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin: 30px 0 20px;
+        }
+
+        .noticias-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .tarjeta-noticia {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tarjeta-noticia:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .tarjeta-noticia h3 {
+            color: green;
+            margin-bottom: 10px;
+        }
+
+        .tarjeta-noticia p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #FFFF00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .redes-sociales {
+            margin-top: 10px;
+        }
+
+        .icono-red {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .icono-red:hover {
+            filter: brightness(1.2);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/logo.png" alt="Logo FUNFOREE">
+        <h1><span>Fundación Forjadores de Esperanza y Equidad</span><br><span>FUNFOREE</span></h1>
+        <button class="donar-btn">¡Donar Ahora!</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="#">Conócenos</a>
+                <ul>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="que-hacemos.html">Qué Hacemos</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Noticias</a></li>
+            <li>
+                <a href="#">Apóyanos</a>
+                <ul>
+                    <li><a href="apoyo-economico.html">Apoyo Económico</a></li>
+                    <li><a href="donacion-especie.html">Donación en Especie</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <h1>Noticias</h1>
+
+    <div class="noticias-container">
+        <div class="tarjeta-noticia">
+            <h3>1. El caso de Breiner Estiven impulsa acciones por la visibilización de pacientes con hemofilia</h3>
+            <p>La Fundación FUNFOREE ha acompañado de cerca el caso de Breiner Estiven, un niño afectado por la
+                patología de hemofilia en el departamento del Caquetá. Su historia se ha convertido en símbolo de lucha
+                y evidencia de las barreras que enfrentan los pacientes con enfermedades huérfanas. A través de este
+                caso, la Fundación ha intensificado sus esfuerzos en incidencia institucional, acompañamiento familiar y
+                sensibilización social.</p>
+        </div>
+
+        <div class="tarjeta-noticia">
+            <h3>2. Nace FUNFOREE: Fundación Forjadores de Esperanza y Equidad</h3>
+            <p>Con el compromiso de transformar realidades sociales y promover la equidad en el acceso a la salud, nace
+                oficialmente la Fundación FUNFOREE. Su conformación legal marca un hito para la región, posicionándola
+                como una entidad sin ánimo de lucro orientada a la atención de pacientes con enfermedades huérfanas, la
+                promoción de derechos y el trabajo con comunidades vulnerables, especialmente en zonas rurales del sur
+                de Colombia.</p>
+        </div>
+
+        <div class="tarjeta-noticia">
+            <h3>3. Pacientes con hemofilia acogen positivamente la propuesta de FUNFOREE</h3>
+            <p>A través de jornadas de socialización y diálogo comunitario, la Fundación ha logrado acercarse a
+                numerosos pacientes y familias afectadas por la hemofilia, quienes han recibido con entusiasmo la
+                propuesta institucional. Este respaldo fortalece la misión de FUNFOREE y abre camino a procesos
+                participativos que promuevan el acompañamiento integral, la gestión de tratamientos y la defensa activa
+                del derecho a la salud.</p>
+        </div>
+
+        <div class="tarjeta-noticia">
+            <h3>4. FUNFOREE envía derecho de petición colectivo ante entes de control</h3>
+            <p>En cumplimiento de su misión institucional, la Fundación FUNFOREE radicó un derecho de petición colectivo
+                dirigido a entidades como la Superintendencia de Salud, la Procuraduría y las EPS e IPS que atienden
+                casos de hemofilia. El objetivo es exigir el cumplimiento de tratamientos, garantizar el acceso oportuno
+                a medicamentos y visibilizar las falencias estructurales que vulneran los derechos de los pacientes.</p>
+        </div>
+
+        <div class="tarjeta-noticia">
+            <h3>5. FUNFOREE se prepara para el Encuentro Regional de Pacientes con Hemofilia</h3>
+            <p>Con gran expectativa, la Fundación se encuentra en etapa de alistamiento para liderar y participar
+                activamente en el Encuentro Regional de Pacientes con Hemofilia en la zona sur del país. Este evento
+                será un espacio clave para fortalecer redes, intercambiar experiencias, promover el empoderamiento de
+                los pacientes y articular esfuerzos institucionales en beneficio de quienes conviven con esta condición.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contacto: <a href="mailto:contacto@funforee.com">contacto@funforee.com</a></p>
+        <p>Teléfono móvil: 3151273435</p>
+        <p>WhatsApp: 3142764121</p>
+        <p>Dirección: Calle 2 Sur No. 13A - 03, Urbanización El Bosque II etapa</p>
+        <div class="redes-sociales">
+            <a href="https://wa.me/5731527435" target="_blank"><img src="./img/whatsapp-icon.png" alt="WhatsApp"
+                    class="icono-red"></a>
+            <a href="https://instagram.com/" target="_blank"><img src="./img/instagram-icon.png" alt="Instagram"
+                    class="icono-red"></a>
+            <a href="https://facebook.com/" target="_blank"><img src="./img/facebook-icon.png" alt="Facebook"
+                    class="icono-red"></a>
+            <a href="https://tiktok.com/" target="_blank"><img src="./img/tiktok-icon.png" alt="TikTok"
+                    class="icono-red"></a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

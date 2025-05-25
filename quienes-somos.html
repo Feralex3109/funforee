@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNFOREE - Quiénes Somos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: linear-gradient(to right, white 100%);
+            flex-wrap: wrap;
+            color: white;
+        }
+
+        header img {
+            height: 150px;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            margin: 0;
+            text-align: center;
+        }
+
+        header h1 span:first-child {
+            color: red;
+            font-weight: bold;
+        }
+
+        header h1 span:last-child {
+            color: blue;
+            font-weight: bold;
+        }
+
+        nav {
+            background: linear-gradient(to right, #007BFF 100%);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #4CAF50;
+            min-width: 160px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            display: block;
+        }
+
+        nav ul li ul li a {
+            padding: 10px;
+        }
+
+        nav ul li:hover>a {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .donar-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            position: relative;
+            right: 20px;
+            top: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin: 30px 0 20px;
+        }
+
+        .tarjetas-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .tarjeta {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .tarjeta h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .tarjeta p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #FFFF00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .redes-sociales {
+            margin-top: 10px;
+        }
+
+        .icono-red {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .icono-red:hover {
+            filter: brightness(1.2);
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="./img/logo.png" alt="Logo FUNFOREE">
+        <h1><span>Fundación Forjadores de Esperanza y Equidad</span><br><span>FUNFOREE</span> </h1>
+        <button class="donar-btn">¡Donar Ahora!</button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+                <a href="#">Conócenos</a>
+                <ul>
+                    <li><a href="#">Quiénes Somos</a></li>
+                    <li><a href="que-hacemos.html">Qué Hacemos</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                </ul>
+            </li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li>
+                <a href="#">Apóyanos</a>
+                <ul>
+                    <li><a href="apoyo-economico.html">Apoyo Económico</a></li>
+                    <li><a href="donacion-especie.html">Donación en Especie</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                </ul>
+            </li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <h1>Quiénes Somos</h1>
+
+    <div class="tarjetas-container">
+        <div class="tarjeta">
+            <p>
+                La Fundación Forjadores de Esperanza y Equidad – FUNFOREE es una organización sin ánimo de lucro
+                comprometida con la defensa de los derechos fundamentales de las personas en situación de
+                vulnerabilidad, con especial atención a quienes padecen enfermedades huérfanas y otras condiciones de
+                salud de alto impacto.
+            </p>
+            <p>
+                Nacimos con la convicción de que la equidad y la esperanza no deben ser privilegios, sino derechos
+                garantizados para todas las personas, sin importar su condición social, ubicación geográfica o
+                diagnóstico médico. Por ello, trabajamos de manera integral en áreas como salud, educación,
+                fortalecimiento comunitario, asistencia jurídica, desarrollo rural y gestión de proyectos sociales.
+            </p>
+            <p>
+                Nuestra labor se enfoca especialmente en comunidades rurales y marginadas del departamento del Caquetá y
+                la región amazónica, donde promovemos el acceso digno a servicios básicos, el empoderamiento ciudadano y
+                la construcción de entornos protectores y sostenibles.
+            </p>
+            <p>
+                En FUNFOREE creemos que la transformación social es posible cuando las instituciones se acercan a la
+                gente con empatía, compromiso y visión de futuro.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Misión</h2>
+            <p>
+                La Fundación Forjadores de Esperanza y Equidad – FUNFOREE tiene como misión promover y defender los
+                derechos fundamentales de las personas en situación de vulnerabilidad, especialmente aquellas que
+                padecen enfermedades huérfanas y condiciones de salud de alto costo, a través de la gestión social, la
+                articulación interinstitucional, el acompañamiento integral y el desarrollo de proyectos con enfoque
+                humano, territorial y de equidad.
+            </p>
+        </div>
+
+        <div class="tarjeta">
+            <h2>Visión</h2>
+            <p>
+                FUNFOREE se proyecta al año 2030 como una organización social líder en el sur de Colombia, reconocida
+                por su compromiso con la justicia social, su capacidad de incidencia en políticas públicas y su impacto
+                transformador en comunidades rurales, consolidándose como un referente en la atención integral a
+                pacientes con enfermedades huérfanas y en la promoción de entornos inclusivos, equitativos y
+                resilientes.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div style="text-align: center;">
+            <p>Contacto: <a href="mailto:contacto@funforee.com">contacto@funforee.com</a></p>
+            <p>Teléfono móvil: 3151273435</p>
+            <p>WhatsApp: 3142764121</p>
+            <p>Dirección: Calle 2 Sur No. 13A - 03, Urbanización El Bosque II etapa</p>
+            <div style="margin-top: 10px;">
+                <a href="https://wa.me/5731527435" target="_blank" style="margin: 0 10px;">
+                    <img src="./img/whatsapp-icon.png" alt="WhatsApp"
+                        style="width:40px; height:40px; vertical-align: middle;">
+                </a>
+                <a href="https://instagram.com/" target="_blank" style="margin: 0 10px;">
+                    <img src="./img/instagram-icon.png" alt="Instagram"
+                        style="width:40px; height:40px; vertical-align: middle;">
+                </a>
+                <a href="https://facebook.com/" target="_blank" style="margin: 0 10px;">
+                    <img src="./img/facebook-icon.png" alt="Facebook"
+                        style="width:40px; height:40px; vertical-align: middle;">
+                </a>
+                <a href="https://tiktok.com/" target="_blank" style="margin: 0 10px;">
+                    <img src="./img/tiktok-icon.png" alt="TikTok"
+                        style="width:40px; height:40px; vertical-align: middle;">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

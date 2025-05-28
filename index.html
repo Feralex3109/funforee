@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUNFOREE - Inicio</title>
+    <meta name="description"
+        content="La Fundación Forjadores de Esperanza y Equidad - FUNFOREE apoya a pacientes con enfermedades huérfanas, brindando oportunidades y defendiendo derechos en Caquetá.">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background: #f7fafd;
         }
 
         header {
@@ -17,32 +20,52 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            background: linear-gradient(to right, white 100%);
+            background: linear-gradient(to right, #fff 70%, #007BFF 100%);
             flex-wrap: wrap;
         }
 
         header img {
-            height: 150px;
+            height: 110px;
         }
 
         header h1 {
-            font-size: 1.8em;
+            font-size: 1.5em;
             margin: 0;
             text-align: center;
+            line-height: 1.1;
         }
 
         header h1 span:first-child {
-            color: red;
+            color: #e53935;
             font-weight: bold;
         }
 
         header h1 span:last-child {
-            color: blue;
+            color: #007BFF;
             font-weight: bold;
         }
 
+        .donar-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 22px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.2s;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .donar-btn:hover {
+            background-color: #005bb5;
+        }
+
         nav {
-            background: linear-gradient(to right, #007BFF 100%);
+            background: linear-gradient(to right, #007BFF 0%, #36A2EB 100%);
         }
 
         nav ul {
@@ -62,6 +85,7 @@
             padding: 12px 20px;
             text-decoration: none;
             display: block;
+            font-weight: bold;
         }
 
         nav ul li ul {
@@ -70,10 +94,11 @@
             background-color: #4CAF50;
             min-width: 160px;
             border-radius: 5px;
-            z-index: 1;
+            z-index: 2;
         }
 
-        nav ul li:hover ul {
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
             display: block;
         }
 
@@ -82,86 +107,102 @@
         }
 
         nav ul li ul li a {
-            padding: 10px;
+            padding: 10px 18px;
         }
 
-        nav ul li:hover>a {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        .donar-btn {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-            border-radius: 5px;
+        nav ul li:hover>a,
+        nav ul li:focus-within>a {
+            background-color: rgba(0, 0, 0, 0.10);
         }
 
         .container {
-            padding: 20px;
+            padding: 22px;
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
         }
 
         .slogan {
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: #007BFF;
             font-weight: bold;
-            margin: 20px 0;
+            margin: 24px 0 16px 0;
+        }
+
+        .grafico {
+            width: 100%;
+            max-width: 420px;
+            height: auto;
+            margin: 18px auto 26px auto;
+            display: block;
+        }
+
+        .patologias {
+            text-align: left;
+            display: inline-block;
+            margin: 16px auto;
+        }
+
+        .patologias h3 {
+            color: #333;
+            margin-bottom: 7px;
+        }
+
+        .patologias ul {
+            margin: 0 0 16px 16px;
+            padding: 0;
+        }
+
+        .mapa {
+            text-align: center;
+            margin: 38px 0;
+        }
+
+        .mapa h2 {
+            color: #222;
+        }
+
+        .mapa iframe {
+            width: 98%;
+            max-width: 500px;
+            height: 240px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
         }
 
         .cta {
             background-color: #4CAF50;
             color: white;
-            padding: 20px;
+            padding: 24px 5px 19px 5px;
             text-align: center;
-            margin: 40px 0;
+            margin: 40px 0 0 0;
+            border-radius: 14px;
         }
 
         .cta h2 {
-            margin-bottom: 10px;
+            margin-bottom: 9px;
+            font-size: 1.25em;
         }
 
         .cta a {
             background-color: white;
             color: #4CAF50;
-            padding: 10px 20px;
+            padding: 9px 18px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
+            transition: background 0.2s, color 0.2s;
         }
 
-        .mapa {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .mapa iframe {
-            width: 90%;
-            max-width: 600px;
-            height: 300px;
-            border: 2px solid #007BFF;
-            border-radius: 10px;
-        }
-
-        .grafico {
-            width: 500px !important;
-            height: 500px !important;
-            margin: 20px auto;
-        }
-
-        .patologias {
-            text-align: left;
-            list-style-type: disc;
-            padding-left: 20px;
+        .cta a:hover {
+            background: #e2ffe8;
         }
 
         footer {
             background-color: #007BFF;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 18px;
             font-size: 1em;
         }
 
@@ -175,24 +216,71 @@
             text-decoration: underline;
         }
 
-        footer p {
-            margin: 5px 0;
-        }
-
         .redes-sociales {
-            margin-top: 10px;
+            margin-top: 11px;
         }
 
         .icono-red {
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
+            width: 37px;
+            height: 37px;
+            margin: 0 8px;
             vertical-align: middle;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            transition: filter 0.25s;
         }
 
         .icono-red:hover {
-            filter: brightness(1.2);
-            transition: 0.3s;
+            filter: brightness(1.17);
+        }
+
+        /* Responsive */
+        @media (max-width: 750px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header img {
+                height: 80px;
+            }
+
+            .container {
+                padding: 11px;
+            }
+
+            .grafico {
+                max-width: 98vw;
+            }
+
+            .mapa iframe {
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                display: block;
+                text-align: left;
+            }
+
+            nav ul li {
+                display: block;
+            }
+
+            nav ul li ul {
+                position: static;
+            }
+
+            .patologias {
+                font-size: 1em;
+            }
+
+            .grafico {
+                max-width: 100vw;
+            }
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -202,8 +290,11 @@
 
     <header>
         <img src="./img/logo.png" alt="Logo FUNFOREE">
-        <h1><span>Fundación Forjadores de Esperanza y Equidad</span><br><span>FUNFOREE</span> </h1>
-        <button class="donar-btn">¡Donar Ahora!</button>
+        <h1>
+            <span>Fundación Forjadores de Esperanza y Equidad</span><br>
+            <span>FUNFOREE</span>
+        </h1>
+        <a href="donar.html" class="donar-btn">¡Donar Ahora!</a>
     </header>
 
     <nav>
@@ -231,11 +322,11 @@
         </ul>
     </nav>
 
-    <div class="container">
+    <main class="container">
         <p class="slogan">"Transformamos Sueños en Oportunidades con Equidad y Esperanza"</p>
 
         <h2>Distribución de Patologías</h2>
-        <canvas id="graficoPatologias" class="grafico"></canvas>
+        <canvas id="graficoPatologias" class="grafico" aria-label="Gráfico de distribución de patologías"></canvas>
 
         <div class="patologias">
             <h3>Patologías Atendidas</h3>
@@ -252,24 +343,26 @@
             <h2>Ubicación</h2>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.844074975945!2d-75.61698498583385!3d1.6142193999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e250f9b8bcb2b9b%3A0x400947b4e0e9e52e!2sFlorencia%2C%20Caquet%C3%A1!5e0!3m2!1ses-419!2sco!4v1625681759857!5m2!1ses-419!2sco"
-                allowfullscreen="" loading="lazy"></iframe>
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación de FUNFOREE"></iframe>
         </div>
 
         <div class="cta">
             <h2>¡Súmate a nuestra causa!</h2>
             <a href="contacto.html">Contáctanos</a>
         </div>
-    </div>
+    </main>
 
     <script>
+        // Gráfico Chart.js
         const ctx = document.getElementById('graficoPatologias').getContext('2d');
-        const grafico = new Chart(ctx, {
+        new Chart(ctx, {
             type: 'doughnut',
             data: {
-                labels: ['Hemofilia', 'Von Willebrand', 'Púrpura'],
+                labels: ['Hemofilia A', 'Hemofilia B', 'Hemofilia C', 'Von Willebrand', 'Púrpura'],
                 datasets: [{
-                    data: [45, 35, 20],
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+                    data: [30, 25, 15, 18, 12],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#80cbc4', '#a1887f']
                 }]
             },
             options: {
@@ -286,7 +379,7 @@
                 },
                 layout: {
                     padding: {
-                        top: 20
+                        top: 18
                     }
                 }
             }
@@ -294,23 +387,25 @@
     </script>
 
     <footer>
-        <div style="text-align: center;">
+        <div>
             <p>Contacto: <a href="mailto:contacto@funforee.com">contacto@funforee.com</a></p>
             <p>Teléfono móvil: 3151273435</p>
             <p>WhatsApp: 3142764121</p>
             <p>Dirección: Calle 2 Sur No. 13A - 03, Urbanización El Bosque II etapa</p>
             <div class="redes-sociales">
-                <a href="https://wa.me/5731527435" target="_blank"><img src="./img/whatsapp-icon.png" alt="WhatsApp"
-                        class="icono-red"></a>
-                <a href="https://instagram.com/" target="_blank"><img src="./img/instagram-icon.png" alt="Instagram"
-                        class="icono-red"></a>
-                <a href="https://facebook.com/" target="_blank"><img src="./img/facebook-icon.png" alt="Facebook"
-                        class="icono-red"></a>
-                <a href="https://tiktok.com/" target="_blank"><img src="./img/tiktok-icon.png" alt="TikTok"
-                        class="icono-red"></a>
+                <a href="https://wa.me/5731527435" target="_blank" title="WhatsApp"><img src="./img/whatsapp-icon.png"
+                        alt="WhatsApp" class="icono-red"></a>
+                <a href="https://instagram.com/" target="_blank" title="Instagram"><img src="./img/instagram-icon.png"
+                        alt="Instagram" class="icono-red"></a>
+                <a href="https://facebook.com/" target="_blank" title="Facebook"><img src="./img/facebook-icon.png"
+                        alt="Facebook" class="icono-red"></a>
+                <a href="https://tiktok.com/" target="_blank" title="TikTok"><img src="./img/tiktok-icon.png"
+                        alt="TikTok" class="icono-red"></a>
             </div>
         </div>
     </footer>
+    <script src="js/script.js"></script>
+
 
 </body>
 

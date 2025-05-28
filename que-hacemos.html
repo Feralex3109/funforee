@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FUNFOREE - Qué Hacemos</title>
+    <meta name="description"
+        content="Descubre las acciones, principios y compromiso de FUNFOREE en salud, equidad social, ambiente y trabajo comunitario en Caquetá y región amazónica.">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5;
+            background: #f0f2f5;
         }
 
         header {
@@ -18,33 +20,52 @@
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            background: linear-gradient(to right, white 100%);
+            background: linear-gradient(to right, #fff 70%, #007BFF 100%);
             flex-wrap: wrap;
-            color: white;
         }
 
         header img {
-            height: 150px;
+            height: 110px;
         }
 
         header h1 {
-            font-size: 1.8em;
+            font-size: 1.5em;
             margin: 0;
             text-align: center;
+            line-height: 1.1;
         }
 
         header h1 span:first-child {
-            color: red;
+            color: #e53935;
             font-weight: bold;
         }
 
         header h1 span:last-child {
-            color: blue;
+            color: #007BFF;
             font-weight: bold;
         }
 
+        .donar-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 22px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background 0.2s;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .donar-btn:hover {
+            background-color: #005bb5;
+        }
+
         nav {
-            background: linear-gradient(to right, #007BFF 100%);
+            background: linear-gradient(to right, #007BFF 0%, #36A2EB 100%);
         }
 
         nav ul {
@@ -64,6 +85,7 @@
             padding: 12px 20px;
             text-decoration: none;
             display: block;
+            font-weight: bold;
         }
 
         nav ul li ul {
@@ -72,10 +94,11 @@
             background-color: #4CAF50;
             min-width: 160px;
             border-radius: 5px;
-            z-index: 1;
+            z-index: 2;
         }
 
-        nav ul li:hover ul {
+        nav ul li:hover ul,
+        nav ul li:focus-within ul {
             display: block;
         }
 
@@ -84,72 +107,113 @@
         }
 
         nav ul li ul li a {
-            padding: 10px;
+            padding: 10px 18px;
         }
 
-        nav ul li:hover>a {
-            background-color: rgba(0, 0, 0, 0.1);
+        nav ul li:hover>a,
+        nav ul li:focus-within>a {
+            background-color: rgba(0, 0, 0, 0.10);
         }
 
-        .donar-btn {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-            position: relative;
-            right: 20px;
-            top: 30px;
-        }
-
-        h1 {
+        .titulo-seccion {
             text-align: center;
             color: #007BFF;
-            margin: 30px 0 20px;
+            margin: 34px 0 22px 0;
+            font-size: 2em;
         }
 
         .tarjetas-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 900px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            max-width: 1100px;
             margin: auto;
-            padding: 20px;
+            padding: 24px 10px 20px 10px;
         }
 
         .tarjeta {
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.11);
+            padding: 22px 20px 18px 20px;
+            width: 340px;
+            min-width: 260px;
             box-sizing: border-box;
             transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .tarjeta:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
         }
 
         .tarjeta h2 {
             color: #4CAF50;
-            margin-bottom: 15px;
+            margin-bottom: 11px;
             text-align: center;
+            font-size: 1.18em;
         }
 
         .tarjeta p {
             text-align: justify;
-            line-height: 1.6;
+            line-height: 1.65;
+            color: #363636;
+            margin-bottom: 0;
+        }
+
+        .tarjeta:first-child {
+            width: 100%;
+            min-width: 260px;
+            max-width: 97vw;
+        }
+
+        @media (max-width: 900px) {
+            .tarjetas-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
+            }
+
+            .tarjeta {
+                width: 96vw;
+                min-width: 0;
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header img {
+                height: 75px;
+            }
+
+            .titulo-seccion {
+                font-size: 1.23em;
+                margin-top: 23px;
+            }
+
+            .tarjeta {
+                padding: 14px 6px 12px 8px;
+                font-size: 1em;
+            }
         }
 
         footer {
             background-color: #007BFF;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 18px;
             font-size: 1em;
         }
 
@@ -163,24 +227,23 @@
             text-decoration: underline;
         }
 
-        footer p {
-            margin: 5px 0;
-        }
-
         .redes-sociales {
-            margin-top: 10px;
+            margin-top: 11px;
         }
 
         .icono-red {
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
+            width: 37px;
+            height: 37px;
+            margin: 0 8px;
             vertical-align: middle;
+            border-radius: 50%;
+            object-fit: contain;
+            background: white;
+            transition: filter 0.25s;
         }
 
         .icono-red:hover {
-            filter: brightness(1.2);
-            transition: 0.3s;
+            filter: brightness(1.17);
         }
     </style>
 </head>
@@ -189,8 +252,11 @@
 
     <header>
         <img src="./img/logo.png" alt="Logo FUNFOREE">
-        <h1><span>Fundación Forjadores de Esperanza y Equidad</span><br><span>FUNFOREE</span> </h1>
-        <button class="donar-btn">¡Donar Ahora!</button>
+        <h1>
+            <span>Fundación Forjadores de Esperanza y Equidad</span><br>
+            <span>FUNFOREE</span>
+        </h1>
+        <a href="donar.html" class="donar-btn">¡Donar Ahora!</a>
     </header>
 
     <nav>
@@ -218,14 +284,16 @@
         </ul>
     </nav>
 
-    <h1>Qué Hacemos</h1>
+    <h1 class="titulo-seccion">Qué Hacemos</h1>
 
     <div class="tarjetas-container">
         <div class="tarjeta">
             <h2>Principios Ideológicos</h2>
-            <p>La Fundación Forjadores de Esperanza y Equidad – FUNFOREE basa su labor en una ideología profundamente
+            <p>
+                La Fundación Forjadores de Esperanza y Equidad – FUNFOREE basa su labor en una ideología profundamente
                 humanista, solidaria y transformadora, que reconoce la dignidad de cada ser humano como el principio y
-                fin de toda acción social. Sus principios ideológicos fundamentales son:</p>
+                fin de toda acción social. Sus principios ideológicos fundamentales son:
+            </p>
             <p><strong>1. Equidad social:</strong> Creemos en la necesidad de equilibrar las desigualdades históricas
                 mediante acciones afirmativas que garanticen el acceso real a derechos, recursos y oportunidades para
                 todos, especialmente para quienes han sido excluidos por razones de salud, territorio o condición
@@ -245,65 +313,57 @@
                 sociedad civil y el sector privado, como estrategia para potenciar el impacto de nuestras acciones y
                 construir soluciones sostenibles.</p>
         </div>
-
         <div class="tarjeta">
             <h2>Principios Éticos</h2>
-            <p>Dignidad humana: Reconocemos el valor intrínseco de toda persona, sin importar su condición, diagnóstico
-                o procedencia.</p>
-            <p>Transparencia: Actuamos con integridad, claridad y responsabilidad en la gestión de recursos y la toma de
-                decisiones.</p>
-            <p>Solidaridad: Practicamos la empatía activa, poniendo nuestras capacidades al servicio de quienes más lo
-                necesitan.</p>
-            <p>Compromiso: Cumplimos con responsabilidad cada una de nuestras acciones y alianzas en beneficio de las
-                comunidades.</p>
+            <p><strong>Dignidad humana:</strong> Reconocemos el valor intrínseco de toda persona, sin importar su
+                condición, diagnóstico o procedencia.</p>
+            <p><strong>Transparencia:</strong> Actuamos con integridad, claridad y responsabilidad en la gestión de
+                recursos y la toma de decisiones.</p>
+            <p><strong>Solidaridad:</strong> Practicamos la empatía activa, poniendo nuestras capacidades al servicio de
+                quienes más lo necesitan.</p>
+            <p><strong>Compromiso:</strong> Cumplimos con responsabilidad cada una de nuestras acciones y alianzas en
+                beneficio de las comunidades.</p>
         </div>
-
         <div class="tarjeta">
             <h2>Principios Sociales y Ambientales</h2>
             <p><strong>Principios Sociales:</strong></p>
-            <p>Equidad e inclusión: Promovemos la igualdad de oportunidades y la no discriminación por razones de salud,
-                género, etnia o territorio.</p>
-            <p>Justicia social: Buscamos corregir desigualdades estructurales mediante acciones que dignifiquen y
-                empoderen a las personas excluidas.</p>
-            <p>Participación comunitaria: Valoramos y fomentamos el protagonismo de las comunidades en los procesos de
-                transformación social.</p>
-            <p>Corresponsabilidad: Creemos en el trabajo articulado entre sociedad civil, Estado y sector privado para
-                lograr impactos sostenibles.</p>
+            <p><strong>Equidad e inclusión:</strong> Promovemos la igualdad de oportunidades y la no discriminación por
+                razones de salud, género, etnia o territorio.</p>
+            <p><strong>Justicia social:</strong> Buscamos corregir desigualdades estructurales mediante acciones que
+                dignifiquen y empoderen a las personas excluidas.</p>
+            <p><strong>Participación comunitaria:</strong> Valoramos y fomentamos el protagonismo de las comunidades en
+                los procesos de transformación social.</p>
+            <p><strong>Corresponsabilidad:</strong> Creemos en el trabajo articulado entre sociedad civil, Estado y
+                sector privado para lograr impactos sostenibles.</p>
             <p><strong>Principios Ambientales:</strong></p>
-            <p>Respeto por el entorno natural: Promovemos prácticas que favorezcan la sostenibilidad ambiental en cada
-                intervención territorial.</p>
-            <p>Educación ambiental: Incorporamos la conciencia ecológica como parte del desarrollo humano integral.</p>
-            <p>Uso responsable de los recursos: Aplicamos criterios de eficiencia y sostenibilidad en nuestras
-                operaciones y proyectos.</p>
+            <p><strong>Respeto por el entorno natural:</strong> Promovemos prácticas que favorezcan la sostenibilidad
+                ambiental en cada intervención territorial.</p>
+            <p><strong>Educación ambiental:</strong> Incorporamos la conciencia ecológica como parte del desarrollo
+                humano integral.</p>
+            <p><strong>Uso responsable de los recursos:</strong> Aplicamos criterios de eficiencia y sostenibilidad en
+                nuestras operaciones y proyectos.</p>
         </div>
     </div>
 
     <footer>
-        <div style="text-align: center;">
+        <div>
             <p>Contacto: <a href="mailto:contacto@funforee.com">contacto@funforee.com</a></p>
             <p>Teléfono móvil: 3151273435</p>
             <p>WhatsApp: 3142764121</p>
             <p>Dirección: Calle 2 Sur No. 13A - 03, Urbanización El Bosque II etapa</p>
-            <div style="margin-top: 10px;">
-                <a href="https://wa.me/5731527435" target="_blank" style="margin: 0 10px;">
-                    <img src="./img/whatsapp-icon.png" alt="WhatsApp"
-                        style="width:40px; height:40px; vertical-align: middle;">
-                </a>
-                <a href="https://instagram.com/" target="_blank" style="margin: 0 10px;">
-                    <img src="./img/instagram-icon.png" alt="Instagram"
-                        style="width:40px; height:40px; vertical-align: middle;">
-                </a>
-                <a href="https://facebook.com/" target="_blank" style="margin: 0 10px;">
-                    <img src="./img/facebook-icon.png" alt="Facebook"
-                        style="width:40px; height:40px; vertical-align: middle;">
-                </a>
-                <a href="https://tiktok.com/" target="_blank" style="margin: 0 10px;">
-                    <img src="./img/tiktok-icon.png" alt="TikTok"
-                        style="width:40px; height:40px; vertical-align: middle;">
-                </a>
+            <div class="redes-sociales">
+                <a href="https://wa.me/5731527435" target="_blank" title="WhatsApp"><img src="./img/whatsapp-icon.png"
+                        alt="WhatsApp" class="icono-red"></a>
+                <a href="https://instagram.com/" target="_blank" title="Instagram"><img src="./img/instagram-icon.png"
+                        alt="Instagram" class="icono-red"></a>
+                <a href="https://facebook.com/" target="_blank" title="Facebook"><img src="./img/facebook-icon.png"
+                        alt="Facebook" class="icono-red"></a>
+                <a href="https://tiktok.com/" target="_blank" title="TikTok"><img src="./img/tiktok-icon.png"
+                        alt="TikTok" class="icono-red"></a>
             </div>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 
 
 </body>
